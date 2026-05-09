@@ -39,7 +39,7 @@ sudo apt-get install -y openjdk-21-jdk
 sudo snap install gradle --classic
 
 # Clone and build
-git clone https://github.com/YOUR_USERNAME/burp-claude-extension.git
+git clone https://github.com/w41l3r/burp-claude-extension.git
 cd burp-claude-extension
 gradle shadowJar
 ```
