@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'com.claudeburp'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'net.portswigger.burp.extensions:montoya-api:2024.7'
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+shadowJar {
+    archiveBaseName = 'burp-claude-extension'
+    archiveClassifier = ''
+    archiveVersion = project.version
+    manifest {
+        attributes 'Implementation-Title': 'Burp Claude AI Analyzer'
+    }
+}
+
+build.dependsOn shadowJar
